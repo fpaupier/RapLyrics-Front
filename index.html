@@ -1,0 +1,298 @@
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116545707-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-116545707-1');
+    </script>
+    <title>raplyrics</title>
+    <meta charset="utf-8">
+    <meta name="description" content="AI generated rap music lyrics inspired from artists worldwide.">
+    <meta name="keywords"
+          content="AI, artificial intelligence, rap, rap music, music, lyrics, lyric, sound, punchline, sample, sampler, genuine, create">
+    <meta name="author" content="Cyril De Catheu, Paupier François">
+
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="🔫 raplyrics"/>
+    <meta property="og:description" content="I'm creating genuine punchline on @raplyrics"/>
+    <meta property="og:url" content="https://raplyrics.eu"/>
+    <meta property="og:site_name" content="RapLyrics.eu"/>
+    <meta property="og:image"
+          content="https://static.booska-p.com/images/news/une-chronologie-devoile-les-charts-hip-hop-depuis-1989-video-649.jpg"/>
+
+    <!-- Twitter Card meta -->
+    <meta name="twitter:card"       content="summary_large_image"/>
+    <meta name="twitter:domain" content="🔫  RapLyrics"/>
+    <meta name="twitter:title"  content=" 🔫  RapLyrics"/>
+    <meta name="twitter:creator" content="@raplyrics"/>
+    <meta name="twitter:site" content="@raplyrics"/>
+    <meta name="twitter:url" content="https://raplyrics.eu"/>
+    <meta name="twitter:description" content="AI generated rap music lyrics inspired from artists worldwide."/>
+    <meta name="twitter:image" content="https://static.booska-p.com/images/news/une-chronologie-devoile-les-charts-hip-hop-depuis-1989-video-649.jpg"/>
+    <meta name="twitter:image:alt" content="Share genuine rap music punchline."/>
+
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/uiProgressButton.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="custom.css">
+    <link rel="shortcut icon" type="image/ico" href="assets/logo.ico"/>
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <header class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+            <h1 class="WebsiteName">raplyrics</h1>
+        </header>
+    </div>
+    <div class="row spacer">
+        <div class="col-sm-1 col-md-2 col-lg-3"></div>
+        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
+            <div style="padding-bottom: 0.5cm">
+                <div class="text-center bg-light">
+                    <div class="card-body" style="padding-bottom: 0.2cm">
+                        <input class="card-title form-control" type="text" id="input" name="input"
+                               placeholder="Type a few words here" autofocus/>
+                        <div class="progress-button elastic">
+                            <button type="submit" id="btn"><span>Create a brand new punchline</span></button>
+                            <svg class="progress-circle" width="70" height="70">
+                                <path d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z"/>
+                            </svg>
+                            <svg class="checkmark" width="70" height="70">
+                                <path d="m31.5,46.5l15.3,-23.2"/>
+                                <path d="m31.5,46.5l-8.5,-7.1"/>
+                            </svg>
+                            <svg class="cross" width="70" height="70">
+                                <path d="m35,35l-9.3,-9.3"/>
+                                <path d="m35,35l9.3,9.3"/>
+                                <path d="m35,35l-9.3,9.3"/>
+                                <path d="m35,35l9.3,-9.3"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="card-text api-pre" style="padding-bottom: 0.2cm">
+                            <div id="api_output">I am an AI-driven rap lyrics generator. <br/> Expect the unexpected.
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="twitter">
+                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+                           data-size="large" data-text="Generate AI rap music lyrics inspired from over 1000 US artists on"
+                           data-url="http://raplyrics.eu/" data-hashtags="rapmusic" data-show-count="false">Tweet</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1 col-md-2 col-lg-3"></div>
+    </div>
+</div>
+<footer class="footer">
+    <div class=container-fluid>
+        <div class="row line-separator"></div>
+        <div class="row whiter">
+            <div class="col-md-3 col-lg-3 text-left hidden-sm-down" style="padding-left: 3%">
+                <a href="#" id="policy1">Policy</a>
+            </div>
+            <div class="col-md-6 col-lg-6 text-center hidden-sm-down">An AI experience by Lyrics Vindicator</div>
+            <div class="col-md-3 col-lg-3 text-right hidden-sm-down" style="padding-right: 3%">
+                <a href="#" id="about1">About</a>
+            </div>
+            <div class="col-xs-12 col-sm-12 hidden-md-up"><a href="#" id="policy2">Policy</a> | <a href="#" id="about2">About</a>
+            </div>
+
+            <div class="modal fade" id="aboutModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">About us</h4>
+                            <button type="button" class="close" data-dismiss="modal"><img src="assets/close.svg"
+                                                                                          height="16" width="16">
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>raplyrics.eu relies on artificial intelligence to provide you with genuine rap music
+                                lyrics.
+                                Our algorithm learnt from millions of songs from various artists to develop its own
+                                style.
+                                Simply input a few words and let the magic happen. <br/>
+                            <h4>Found a savage punchline ?</h4>
+                            Share your lyrics and don't forget to mention raplyrics.eu to your friends.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="policyModal" role="dialog">
+
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Privacy Policy</h4>
+                            <button type="button" class="close" data-dismiss="modal"><img src="assets/close.svg"
+                                                                                          height="16" width="16">
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div include-html="assets/policy.html"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="close" data-dismiss="modal"><img src="assets/close.svg"
+                                                                                          height="16" width="16">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</footer>
+
+<script>
+    $(document).ready(function () {
+        $("#about1").click(function () {
+            $("#aboutModal").modal();
+        });
+
+        $("#about2").click(function () {
+            $("#aboutModal").modal();
+        });
+    });
+
+    $(document).ready(function () {
+        $("#policy1").click(function () {
+            $("#policyModal").modal();
+        });
+
+        $("#policy2").click(function () {
+            $("#policyModal").modal();
+        });
+    });
+</script>
+
+</body>
+
+<script>
+    [].slice.call(document.querySelectorAll('.progress-button')).forEach(function (bttn, pos) {
+        new UIProgressButton(bttn, {
+            callback: function (instance) {
+
+                var input = $("#input").val();
+
+                var settings = {
+                    "async": true,
+                    "url": "http://127.0.0.1:8000/apiUS",
+                    "method": "POST",
+                    "headers": {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    "data": {
+                        "input": input
+                    }
+                }
+
+                var request = $.ajax(settings);
+
+                var progress = 0,
+                    interval = setInterval(function () {
+                        //TODO checker en fonction des temps de réponse
+                        progress = Math.min(progress + Math.random() * 0.1, 1);
+                        instance.setProgress(progress);
+
+                        request.done(function (response) {
+                            instance.setProgress(1)
+                            instance.stop(1);
+                            clearInterval(interval);
+                            $('#api_output').html(response.output);
+                            updateTwitterValues(response.output);
+                        });
+
+                        request.fail(function (jqXhr, textStatus, errorThrown) {
+                            instance.setProgress(1)
+                            instance.stop(-1);
+                            clearInterval(interval);
+                            $('#api_output').html("Sorry, the server is asleep... \n Try again in a moment");
+                            console.log(errorThrown);
+                        });
+                    }, 150);
+            }
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    });
+
+</script>
+
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            file = elmnt.getAttribute("include-html");
+            if (file) {
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            elmnt.innerHTML = this.responseText;
+                        }
+                        if (this.status == 404) {
+                            elmnt.innerHTML = "Page not found.";
+                        }
+                        elmnt.removeAttribute("include-html");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                return;
+            }
+        }
+    }
+</script>
+
+<script>$(document).ready(function () {
+    $('#input').keypress(function (e) {
+        if (e.keyCode == 13)
+            $('#btn').click();
+    });
+});
+</script>
+
+<script>
+    function updateTwitterValues(punchline) {
+        $('#twitter').html('&nbsp;');
+        $('#twitter').html('<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://raplyrics.eu/" data-size="large" data-text="“' + punchline + '” - Generate brand new punchline like this one on" data-hashtags="rapmusic" data-count="none">Tweet</a>');
+        twttr.widgets.load();
+    }
+</script>
+<script>
+    includeHTML();
+</script>
