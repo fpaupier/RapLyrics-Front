@@ -1,7 +1,7 @@
 # RapLyrics Front End
 
 <p align="center"> 
-<img src="http://i67.tinypic.com/nwlw1z.png">
+<a href="https://raplyrics.eu"><img img src="http://i64.tinypic.com/16k88ig.jpg"/></a>
 </p>
 
 ## Context 
