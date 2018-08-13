@@ -1,7 +1,8 @@
 # RapLyrics Front End
 
 <p align="center"> 
-<a href="https://raplyrics.eu"><img src="https://i.imgur.com/nG4ADOo.gifv"/></a>
+
+![lyrics generation](/doc/lyrics_sample.gif)
 </p>
 
 ## Context 
