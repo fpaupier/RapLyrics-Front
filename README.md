@@ -1,10 +1,11 @@
 # RapLyrics Front End
 
-<a href='https://raplyrics.eu'>
+
 <p align="center"> 
-![lyrics generation](/doc/lyrics_sample.gif)
+  <a href="https://raplyrics.eu">
+    ![lyrics generation](/doc/lyrics_sample.gif)
+  </a>
 </p>
-</a>
 ## Context 
 This repository contains the assets used for the front-end
 of the `raplyrics` web-app available at [raplyrics.eu](https://raplyrics.eu).
