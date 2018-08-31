@@ -17,8 +17,8 @@ This project consumes a lyric generative web-app served with ``gunicorn``.
 Learn more on how we built the data pipeline including the scraping of lyrics, the training of a state of the art
 text-generative model and the serving of a `tensorflow` model through `gunicorn` by checking our related repositories:
 
-- Scraping lyrics and pre-processing utilities [RapLyrics-Scraper](https://gitlab.com/cyrilou242/RapLyrics-GeniusScraper) 
-- Training and serving a model [RapLyrics-Back](https://gitlab.com/cyrilou242/RapLyrics-Back_Word_2)
+- Scraping lyrics and pre-processing utilities [RapLyrics-Scraper](https://github.com/fpaupier/RapLyrics-Scraper) 
+- Training and serving a model [RapLyrics-Back](https://github.com/cyrilou242/RapLyrics-Back)
 
 ## Protips
 You want to test some models using our front-end? Easy!
