@@ -9,7 +9,7 @@
 
 ## Context 
 This repository contains the assets used for the front-end
-of the `raplyrics` web-app available at [raplyrics.eu](https://raplyrics.eu).
+of the `raplyrics` web-app available at [raplyrics.eu](https://www.raplyrics.eu/?utm_source=github.com&utm_medium=github-readme&utm_campaign=github-front).
 
 This project consumes a lyric generative web-app served with ``gunicorn``.
 
