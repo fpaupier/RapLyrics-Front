@@ -294,5 +294,20 @@
     }
 </script>
 <script>
+    var cta_counter = 0;
+
+    $("#btn").click( function() {
+
+        cta_counter++;
+
+        gtag('event', 'Click', {
+            'event_category': 'btn-click',
+            'event_label': 'main-CTA',
+            'value': cta_counter
+        });
+
+    });
+</script>
+<script>
     includeHTML();
 </script>
