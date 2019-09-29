@@ -203,6 +203,7 @@
 
                 var settings = {
                     "async": true,
+                    "crossDomain": true,
                     "url": "https://us-east1-raplyrics-254321.cloudfunctions.net/lyricist",
                     "method": "POST",
                     "headers": {
@@ -222,15 +223,15 @@
                         instance.setProgress(progress);
 
                         request.done(function (response) {
-                            instance.setProgress(1)
+                            instance.setProgress(1);
                             instance.stop(1);
                             clearInterval(interval);
                             $('#api_output').html(response.output);
-                            updateTwitterValues(response.output);
+                            //updateTwitterValues(response.output);
                         });
 
                         request.fail(function (jqXhr, textStatus, errorThrown) {
-                            instance.setProgress(1)
+                            instance.setProgress(1);
                             instance.stop(-1);
                             clearInterval(interval);
                             $('#api_output').html("Sorry, the server is asleep... \n Try again in a moment");
