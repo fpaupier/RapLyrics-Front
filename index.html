@@ -203,7 +203,7 @@
 
                 var settings = {
                     "async": true,
-                    "url": "https://raplyrics.eu/apiUS",
+                    "url": "https://us-east1-raplyrics-254321.cloudfunctions.net/lyricist",
                     "method": "POST",
                     "headers": {
                         "Content-Type": "application/x-www-form-urlencoded"
@@ -211,7 +211,7 @@
                     "data": {
                         "input": input
                     }
-                }
+                };
 
                 var request = $.ajax(settings);
 
