@@ -13,6 +13,10 @@ of the `raplyrics` web-app available at [raplyrics.eu](https://www.raplyrics.eu/
 
 This project consumes a lyric generative web-app served with ``gunicorn``.
 
+It is hosted on Netlify
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/08e2049f-e289-4579-93f1-a7c1d9b6f938/deploy-status)](https://app.netlify.com/sites/brave-banach-e7f62f/deploys)
+
 ## References 
 Learn more on how we built the data pipeline including the scraping of lyrics, the training of a state of the art
 text-generative model and the serving of a `tensorflow` model through `gunicorn` by checking our related repositories:
