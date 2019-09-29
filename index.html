@@ -1,3 +1,5 @@
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116545707-1"></script>
     <script>
@@ -89,11 +91,10 @@
                         </div>
                     </div>
                     <br>
-                    <div id="twitter">
+                    <div id="twitter-wjs">
                         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
                            data-size="large" data-text="Generate AI rap music lyrics inspired from over 1000 US artists on"
                            data-url="http://raplyrics.eu/" data-hashtags="rapmusic" data-show-count="false">Tweet</a>
-                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div>
                 </div>
             </div>
@@ -227,7 +228,7 @@
                             instance.stop(1);
                             clearInterval(interval);
                             $('#api_output').html(response.output);
-                            //updateTwitterValues(response.output);
+                            updateTwitterValues(response.output);
                         });
 
                         request.fail(function (jqXhr, textStatus, errorThrown) {
@@ -289,8 +290,8 @@
 
 <script>
     function updateTwitterValues(punchline) {
-        $('#twitter').html('&nbsp;');
-        $('#twitter').html('<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://raplyrics.eu/" data-size="large" data-text="“' + punchline + '” - Generate brand new punchline like this one on" data-hashtags="rapmusic" data-count="none">Tweet</a>');
+        $('#twitter-wjs').html('&nbsp;');
+        $('#twitter-wjs').html('<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://raplyrics.eu/" data-size="large" data-text="“' + punchline + '” - Generate brand new punchline like this one on" data-hashtags="rapmusic" data-count="none">Tweet</a>');
         twttr.widgets.load();
     }
 </script>
