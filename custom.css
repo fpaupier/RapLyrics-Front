@@ -43,12 +43,12 @@ body {
 }
 /*Début du css pour la police */
 #input{
-    font-family: Helvetica, sans;
+    font-family: Helvetica, sans, serif;
     font-size: large;
 }
 #api_output {
-        font-family: Helvetica, sans;
-        font-size: large;
+    font-family: Helvetica, sans, serif;
+    font-size: large;
 }
 /*Fin du css pour la police */
 
@@ -228,10 +228,6 @@ body {
 	fill: none;
 }
 
-.progress-button svg.progress-circle path {
-	stroke: #F9690E;
-	stroke-width: 5;
-}
 
 .progress-button svg.checkmark path,
 .progress-button svg.cross path {
@@ -244,11 +240,12 @@ body {
 
 /* Loading, success and error effects */
 .loading.progress-button button {
-	width: 70px; /* make a circle */
-	border-width: 5px;
-	border-color: #ddd;
-	background-color: transparent;
-	color: #fff;
+	/*width: 70px; !* make a circle *!*/
+	/*border-width: 5px;*/
+	/*border-color: #ddd;*/
+	/*background-color: transparent;*/
+	/*color: #fff;*/
+    opacity: 1;
 }
 
 .loading.progress-button span {
@@ -278,7 +275,6 @@ body {
 	background-color: #FB797E;
 }
 
-.loading.progress-button svg.progress-circle path,
 .success.progress-button svg.checkmark path,
 .error.progress-button svg.cross path {
 	opacity: 1;
