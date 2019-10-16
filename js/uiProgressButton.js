@@ -9,7 +9,9 @@
  * http://www.codrops.com
  */
 ;( function( window ) {
-	
+	let isUserWarnedOfLatency = true;
+	const waitingMsg = "First call may take up to 50s ...";
+
 	'use strict';
 
 	let transEndEventNames = {
@@ -126,13 +128,23 @@
 	};
 
 	UIProgressButton.prototype.setLoadingPunchline = function() {
-		let idx = getRandomInt(LoadingPunchlines.length);
-		$('#loading_text').html(LoadingPunchlines[idx]);
+		// Display a random punchline to ease user waiting //
+		let placeholder = "";
+
+		if (isUserWarnedOfLatency){
+			let idx = getRandomInt(LoadingPunchlines.length);
+			placeholder =  LoadingPunchlines[idx];
+		} else {
+			placeholder = waitingMsg;
+		}
+		isUserWarnedOfLatency = !isUserWarnedOfLatency;
+		$('#loading_text').html(placeholder);
 	};
 
 	// enable button
 	UIProgressButton.prototype._enable = function() {
 		this.button.removeAttribute( 'disabled' );
+		isUserWarnedOfLatency = true;  // For call at warm state, don't display the cold warm-up message
 		this.resetInputMessage();
 	};
 
