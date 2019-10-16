@@ -73,6 +73,7 @@
                                 <path d="m31.5,46.5l15.3,-23.2"/>
                                 <path d="m31.5,46.5l-8.5,-7.1"/>
                             </svg>
+
                             <svg class="cross" width="70" height="70">
                                 <path d="m35,35l-9.3,-9.3"/>
                                 <path d="m35,35l9.3,9.3"/>
@@ -218,12 +219,11 @@
 
                 var request = $.ajax(settings);
 
-                var interval = setInterval(function () {
+                let interval = setInterval(function () {
                         //TODO checker en fonction des temps de réponse
                         instance.setLoadingPunchline();
 
                         request.done(function (response) {
-                            instance.resetInputMessage();
                             instance.stop(1);
                             clearInterval(interval);
                             $('#api_output').html(response.Punch);
@@ -231,16 +231,19 @@
                         });
 
                         request.fail(function (jqXhr, textStatus, errorThrown) {
-                            instance.resetInputMessage();
                             instance.stop(-1);
                             clearInterval(interval);
                             $('#api_output').html("Sorry, the server is asleep... \n Try again in a moment");
                             console.log(errorThrown);
+
                         });
-                    }, 150);
+                    }, 900);
             }
+
         });
+
     });
+
 </script>
 
 

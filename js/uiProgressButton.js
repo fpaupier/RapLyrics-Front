@@ -31,10 +31,6 @@
 		return a;
 	}
 
-	function SVGEl( el ) {
-		this.el = el;
-		// the path elements
-	}
 
 	function UIProgressButton( el, options ) {
 		this.el = el;
@@ -52,11 +48,9 @@
 		// the button
 		this.button = this.el.querySelector( 'button' );
 
-		// the success/error elems
-		this.successEl = new SVGEl( this.el.querySelector( 'svg.checkmark' ) );
-		this.errorEl = new SVGEl( this.el.querySelector( 'svg.cross' ) );
 		// init events
 		this._initEvents();
+
 		// enable button
 		this._enable();
 	};
@@ -97,7 +91,7 @@
 		else {
 			onEndBtnTransitionFn();
 		}
-	}
+	};
 
 	// runs after the progress reaches 100%
 	UIProgressButton.prototype.stop = function( status ) {
@@ -105,8 +99,7 @@
 			endLoading = function() {
 
 				if( typeof status === 'number' ) {
-					let statusClass = status >= 0 ? 'success' : 'error',
-						statusEl = status >=0 ? self.successEl : self.errorEl;
+					let statusClass = status >= 0 ? 'success' : 'error';
 
 					// add respective class to the element
 					classie.addClass( self.el, statusClass );
@@ -129,7 +122,7 @@
 	};
 
 	UIProgressButton.prototype.resetInputMessage = function() {
-		$('#loading_text').html("Create a brand new punchline");
+		 $('#loading_text').html("Create a brand new punchline");
 	};
 
 	UIProgressButton.prototype.setLoadingPunchline = function() {
@@ -140,6 +133,7 @@
 	// enable button
 	UIProgressButton.prototype._enable = function() {
 		this.button.removeAttribute( 'disabled' );
+		this.resetInputMessage();
 	};
 
 	// add to global namespace
