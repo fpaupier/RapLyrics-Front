@@ -207,13 +207,13 @@
                 var settings = {
                     "async": true,
                     "crossDomain": true,
-                    "url": "http://127.0.0.1:8080/mc",
+                    "url": "https://us-central1-raplyrics-254321.cloudfunctions.net/fast-lyricist-2",
                     "method": "POST",
                     "headers": {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
                     "data": {
-                        "Inspi": input
+                        "input": input
                     }
                 };
 
@@ -226,8 +226,8 @@
                         request.done(function (response) {
                             instance.stop(1);
                             clearInterval(interval);
-                            $('#api_output').html(response.Punch);
-                            updateTwitterValues(response.Punch);
+                            $('#api_output').html(response.output);
+                            updateTwitterValues(response.output);
                         });
 
                         request.fail(function (jqXhr, textStatus, errorThrown) {
