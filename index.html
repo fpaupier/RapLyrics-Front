@@ -1,3 +1,5 @@
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116545707-1"></script>
     <script>
@@ -66,14 +68,12 @@
                         <input class="card-title form-control" type="text" id="input" name="input"
                                placeholder="Type a few words here" autofocus/>
                         <div class="progress-button elastic">
-                            <button type="submit" id="btn"><span>Create a brand new punchline</span></button>
-                            <svg class="progress-circle" width="70" height="70">
-                                <path d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z"/>
-                            </svg>
+                            <button type="submit" id="btn"><span id="loading_text">Create a brand new punchline</span></button>
                             <svg class="checkmark" width="70" height="70">
                                 <path d="m31.5,46.5l15.3,-23.2"/>
                                 <path d="m31.5,46.5l-8.5,-7.1"/>
                             </svg>
+
                             <svg class="cross" width="70" height="70">
                                 <path d="m35,35l-9.3,-9.3"/>
                                 <path d="m35,35l9.3,9.3"/>
@@ -89,11 +89,10 @@
                         </div>
                     </div>
                     <br>
-                    <div id="twitter">
+                    <div id="twitter-wjs">
                         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
                            data-size="large" data-text="Generate AI rap music lyrics inspired from over 1000 US artists on"
                            data-url="http://raplyrics.eu/" data-hashtags="rapmusic" data-show-count="false">Tweet</a>
-                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div>
                 </div>
             </div>
@@ -195,6 +194,10 @@
 </body>
 
 <script>
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
     [].slice.call(document.querySelectorAll('.progress-button')).forEach(function (bttn, pos) {
         new UIProgressButton(bttn, {
             callback: function (instance) {
@@ -203,7 +206,8 @@
 
                 var settings = {
                     "async": true,
-                    "url": "https://raplyrics.eu/apiUS",
+                    "crossDomain": true,
+                    "url": "https://cloudrunnerlyricist-omcr66ubfq-ue.a.run.app/predict",
                     "method": "POST",
                     "headers": {
                         "Content-Type": "application/x-www-form-urlencoded"
@@ -211,18 +215,15 @@
                     "data": {
                         "input": input
                     }
-                }
+                };
 
                 var request = $.ajax(settings);
 
-                var progress = 0,
-                    interval = setInterval(function () {
+                let interval = setInterval(function () {
                         //TODO checker en fonction des temps de réponse
-                        progress = Math.min(progress + Math.random() * 0.1, 1);
-                        instance.setProgress(progress);
+                        instance.setLoadingPunchline();
 
                         request.done(function (response) {
-                            instance.setProgress(1)
                             instance.stop(1);
                             clearInterval(interval);
                             $('#api_output').html(response.output);
@@ -230,16 +231,19 @@
                         });
 
                         request.fail(function (jqXhr, textStatus, errorThrown) {
-                            instance.setProgress(1)
                             instance.stop(-1);
                             clearInterval(interval);
                             $('#api_output').html("Sorry, the server is asleep... \n Try again in a moment");
                             console.log(errorThrown);
+
                         });
-                    }, 150);
+                    }, 900);
             }
+
         });
+
     });
+
 </script>
 
 
@@ -288,8 +292,8 @@
 
 <script>
     function updateTwitterValues(punchline) {
-        $('#twitter').html('&nbsp;');
-        $('#twitter').html('<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://raplyrics.eu/" data-size="large" data-text="“' + punchline + '” - Generate brand new punchline like this one on" data-hashtags="rapmusic" data-count="none">Tweet</a>');
+        $('#twitter-wjs').html('&nbsp;');
+        $('#twitter-wjs').html('<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-url="https://raplyrics.eu/" data-size="large" data-text="“' + punchline + '” - Generate brand new punchline like this one on" data-hashtags="rapmusic" data-count="none">Tweet</a>');
         twttr.widgets.load();
     }
 </script>
